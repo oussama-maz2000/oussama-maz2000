@@ -1,0 +1,13 @@
+body {
+  background-color: lightcoral;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: auto;
+  background-origin: content-box;
+}
+
+label {
+  font-family: cursive;
+  font-size: 30px;
+}

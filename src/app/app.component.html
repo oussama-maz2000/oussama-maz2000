@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+<h2>Sign In</h2>
+<form  [formGroup]="form"  (ngSubmit)="onsbmited()" class="form">
+   
+   <label >fist name *
+       <input type="text" formControlName="first_name">
+       <div *ngIf="submitted &&f.first_name.errors" >
+           <div *ngIf="f.first_name.errors.required" style="color: red;">Entre  first name please</div>
+           <div *ngIf="f.first_name.errors.minlength" style="color: red;">min lenght 3</div>
+       </div>
+    </label>
+    <br>
+   <label>last name * 
+   <input type="text" formControlName="last_name">
+   <div *ngIf="submitted && f.last_name.errors">
+       <div *ngIf="f.last_name.errors.required" style="color: red;">Entre last name please</div>
+       <div *ngIf="f.last_name.errors.minlength" style="color: red;" >min lenght 3</div>
+   </div>
+   </label>
+   <br>
+   <label >Email *     
+       <input type="text" formControlName="email">
+       <div *ngIf="submitted && f.email.errors">
+        <div *ngIf="f.email.errors.required" style="color: red;"> Entre email please</div>           
+       </div>
+   </label>
+   <br>
+   <label > Password * 
+       <input class="input" type="text" formControlName="password">
+       <div *ngIf="submitted && f.password.errors"  >
+        <div *ngIf="f.password.errors.required" style="color: red;"> Entre password please</div>     
+           <div *ngIf="f.password.errors.pattern" style="color: red;">try again please</div>
+      <div *ngIf="f.password.errors.noSpace" style="color: red;">no space</div>
+        </div>
+   </label>
+    <br>
+  <label > confirmPassword *
+       <input type="text" formControlName="confirmpassword">
+       <div *ngIf="submitted && f.confirmpassword.errors">
+        <div *ngIf="f.confirmpassword.errors.required" > confirm Password</div>  
+       </div>
+   </label> 
+<button  (click)="onclick()">Register</button>
+<button (click)="cancel()"> Cancel </button>
+   </form>
+
+    
+</body>
+   </html>
